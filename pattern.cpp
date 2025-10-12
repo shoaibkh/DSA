@@ -19,10 +19,94 @@ void continuousNumberPattern( int n){
         }
         cout<<endl;
     }
+    cout<<"number of a is "<<a<<endl;
+}
+
+void continuousCharacterPattern( int n){
+    char a='A';
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<a<<" ";
+            a++;
+        }
+        cout<<endl;
+    }
+    cout<<"ch of a is "<<a<<endl;
+}
+
+void trianglePattern(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout<<"*"<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void reverseTriangelPattern(int n){
+    for(int i=n;i>=1;i--){
+        for(int j=1;j<=i;j++){
+            cout<<"*"<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void triangelOfNumber(int n){
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<i+1; j++){
+            cout<<i+1<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void triangelOfAlphabate(int n){
+    char ch = 'A';
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<i+1; j++){
+            cout<<ch<<" ";
+        }
+        ch++;
+        cout<<endl;
+    }
+}
+
+void invertedTriangel(int n){
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<i; j++){
+            cout<<" ";
+        }
+        for(int j = 0; j<n-i; j++){
+            cout<<i+1;
+        }
+        cout<<endl;
+    }
+}
+
+void pyramidTriangel(int n){
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<n-i; j++){
+            cout<<" ";
+        }
+        for(int j = 0; j<i+1; j++){
+            cout<<j+1;
+        }
+        for(int j = i; j>0; j--){
+            cout<<j;
+        }
+        cout<<endl;
+    }
 }
 
 int main() {
-    squarePattern(5);
-    continuousNumberPattern(5);
+    // squarePattern(5);
+    // continuousNumberPattern(2);
+    // continuousCharacterPattern(2);
+    // trianglePattern(5);
+    // reverseTriangelPattern(5);
+    // triangelOfNumber(5);
+    // triangelOfAlphabate(5);
+    pyramidTriangel(4);
     return 0;
 }
