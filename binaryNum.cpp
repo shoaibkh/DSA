@@ -48,5 +48,6 @@ int main(){
     // while (cin >> x) {                       // reading loop is fine; test itself has no loop
     //     cout << x << (isPowerOfTwo(x) ? " is " : " is NOT ") << "a power of 2\n";
     // }
+    
     return 0;
 }
