@@ -23,8 +23,30 @@ int binaryToDec(int binNum){
     return ans;
 }
 
+int revNum(int num){
+    int revNumber = 0;
+    while(num>0){
+        int r = num%10;
+        revNumber = (revNumber*10)+r;
+        num /= 10;
+    }
+    return revNumber;
+}
+
+bool isPowerOfTwo(unsigned long long n) {
+    return n != 0 && ( (n & (n - 1)) == 0 );
+}
+
 int main(){
+    cout<<decToBinary(2)<<endl;
     cout<<decToBinary(3)<<endl;
-    cout<<binaryToDec(11)<<endl;
+    cout<<binaryToDec(10)<<endl;
+    cout<<binaryToDec(101)<<endl;
+    cout<<"power "<<(8&7)<<endl;
+    cout<<"rev num "<<revNum(122)<<endl;
+    // unsigned long long x;
+    // while (cin >> x) {                       // reading loop is fine; test itself has no loop
+    //     cout << x << (isPowerOfTwo(x) ? " is " : " is NOT ") << "a power of 2\n";
+    // }
     return 0;
 }
