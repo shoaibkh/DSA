@@ -15,7 +15,7 @@ vector<int> reverseArr(vector<int> nums){
     int start = 0, end = nums.size()-1; 
     // cout<<nums.at(end)<<endl;
     while(end>start){
-        swap(nums.at(start), nums.at(end));
+        swap(nums[start], nums[end]);
         start++;
         end--;
     }
