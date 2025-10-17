@@ -35,7 +35,7 @@ int maximumSubArrSum(vector<int> nums){
 }
 
 int maxSumByKadaneAlgo(vector<int> nums){
-    int maxSum = INT_MIN, currSum;
+    int maxSum = INT_MIN, currSum = 0;
     for(int i=0; i<nums.size(); i++){
         currSum += nums[i];
         maxSum = max(currSum, maxSum);
@@ -46,9 +46,32 @@ int maxSumByKadaneAlgo(vector<int> nums){
     return maxSum;
 }
 
+vector<int> pairSum(vector<int> nums){
+    int target = 3;
+    int start = 0;
+    int end = nums.size()-1;
+    vector<int> pairIndex;
+    while(end>start){
+        if(nums[start]+nums[end]>target){
+            end--;
+        }else if(nums[start]+nums[end]<target){
+            start++;
+        }else{
+            pairIndex.push_back(start);
+            pairIndex.push_back(end);
+            return pairIndex;
+        }
+    }
+    return pairIndex;
+}
+
 int main(){
-    vector<int> vec = {-4,-1,2,-2,1};
-    cout<<maxSumByKadaneAlgo(vec)<<endl;
+    vector<int> vec = {1,2,3,4,5};
+    vector<int> ans = pairSum(vec);
+    cout<<ans[0]<<","<<ans[1]<<endl;
+    // for(int el: ans){
+    //     cout<<pairSum(vec)<<endl;
+    // }
     // vector<int> reverseVec = reverseArr(vec);
     // for(int val: vec){
     //     cout<<val<<" ";
