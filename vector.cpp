@@ -65,10 +65,62 @@ vector<int> pairSum(vector<int> nums){
     return pairIndex;
 }
 
+int majorityElementBF(vector<int> nums){
+    for(int i = 0; i<nums.size(); i++){
+        int freq = 0;
+        for(int j = 0; j<nums.size(); j++){
+            if(nums[i] == nums[j]){
+                freq++;
+            }
+        }
+        if(freq>nums.size()/2){
+            return nums[i];
+        }
+    }
+    return -1;
+}
+
+int majorityElementOptimize(vector<int> nums){
+    int n = nums.size();
+    sort(nums.begin(), nums.end());
+    int freq = 1, ans=nums[0];
+    for(int i = 1; i<n; i++){
+        if(ans == nums[i]){
+            freq++;
+        }else{
+            freq = 1;
+            ans = nums[i];
+        }
+        if(freq>n/2){
+            return ans;
+        }
+    }
+    return -1;
+}
+
+int majorityElementMoores(vector<int> nums){
+    int n = nums.size();
+    int freq = 0, ans=0;
+    for(int i = 0; i<n; i++){
+        if(freq == 0){
+            ans=nums[i];
+        }
+        if(ans == nums[i]){
+            freq++;
+        }else{
+            freq--;
+        }
+        if(freq>n/2){
+            return ans;
+        }
+    }
+    return -1;
+}
+
 int main(){
-    vector<int> vec = {1,2,3,4,5};
-    vector<int> ans = pairSum(vec);
-    cout<<ans[0]<<","<<ans[1]<<endl;
+    vector<int> vec = {2,2,2,1,5};
+    int ans = majorityElementMoores(vec);
+    cout<<ans<<endl;
     // for(int el: ans){
     //     cout<<pairSum(vec)<<endl;
     // }
