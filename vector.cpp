@@ -110,11 +110,8 @@ int majorityElementMoores(vector<int> nums){
         }else{
             freq--;
         }
-        if(freq>n/2){
-            return ans;
-        }
     }
-    return -1;
+    return ans;
 }
 
 int main(){
